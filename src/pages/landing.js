@@ -14,11 +14,14 @@ const Landing = () => {
       />
 
       <h1 style={styles.title}>Welcome to Reload Interactive</h1>
-      <p style={styles.subtitle}>Your digital experience starts here.</p>
+      <p style={styles.subtitle}>Website currently under Development</p>
 
+      
+      {/*
       <button style={styles.button} onClick={() => alert("Get Started!")}>
         Get Started
       </button>
+      */}
     </div>
   );
 };
