@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
 
-
 const Landing = () => {
-  
-    useEffect(() => {
-        document.title = "Reload Interactive";
-    }, []);
-  
-    return (
+  useEffect(() => {
+    document.title = "Reload Interactive";
+  }, []);
+
+  return (
     <div style={styles.container}>
+      <img 
+        src="../../../public/reload-interactive-icon.png" 
+        alt="Reload Interactive Logo" 
+        style={styles.logo}
+      />
+
       <h1 style={styles.title}>Welcome to Reload Interactive</h1>
       <p style={styles.subtitle}>Your digital experience starts here.</p>
 
@@ -29,6 +33,10 @@ const styles = {
     background: "#111",
     color: "#fff",
     textAlign: "center",
+  },
+  logo: {
+    width: "150px",
+    marginBottom: "1.5rem",
   },
   title: {
     fontSize: "3rem",
