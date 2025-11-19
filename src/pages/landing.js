@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Landing = () => {
-  return (
+  
+    useEffect(() => {
+        document.title = "Reload Interactive";
+    }, []);
+  
+    return (
     <div style={styles.container}>
       <h1 style={styles.title}>Welcome to Reload Interactive</h1>
       <p style={styles.subtitle}>Your digital experience starts here.</p>
