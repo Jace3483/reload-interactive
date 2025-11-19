@@ -8,7 +8,7 @@ const Landing = () => {
   return (
     <div style={styles.container}>
       <img 
-        src="https://reload-interactive.s3.eu-north-1.amazonaws.com/SizedIcon.png" 
+        src="https://reload-interactive.s3.eu-north-1.amazonaws.com/SizedIcon.png"
         alt="Reload Interactive Logo" 
         style={styles.logo}
       />
