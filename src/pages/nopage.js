@@ -2,16 +2,20 @@
 // All Rights Reserved.
 
 import React, { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const NoPage = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     document.title = "404 - Reload Interactive";
-  }, []);
 
-  const timeout = setTimeout(() => {
-    Navigate("/");
-  })
+    const timer = setTimeout(() => {
+      navigate("/"); // redirect after 3 seconds
+    }, 3000);
+
+    return () => clearTimeout(timer); // cleanup
+  }, [navigate]);
 
   return (
     <div style={styles.container}>
@@ -20,22 +24,9 @@ const NoPage = () => {
         alt="Reload Interactive Logo" 
         style={styles.logo}
       />
-
       <h1 style={styles.title}>404</h1>
       <p style={styles.subtitle}>You have hit a dead end</p>
-
-      
-      {/*
-      <button style={styles.button} onClick={() => alert("Get Started!")}>
-        Get Started
-      </button>
-      */}
     </div>
-
-    
-
-
-
   );
 };
 
