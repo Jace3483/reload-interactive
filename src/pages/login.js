@@ -50,7 +50,7 @@ const Login = () => {
           style={styles.logo}
         />
         <h1 style={styles.title}>Sign In</h1>
-        <p style={styles.subtitle}>to continue to Reload Interactive</p>
+        <p style={styles.subtitle}>Sign In to your Reload Interactive Account</p>
 
         <form style={styles.form} onSubmit={handleLogin}>
           <input
