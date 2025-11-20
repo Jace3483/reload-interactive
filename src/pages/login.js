@@ -17,11 +17,12 @@ const Login = () => {
     setMessage('');
 
     try {
-      const res = await fetch('https://qqi49zh942.execute-api.eu-north-1.amazonaws.com/dev/login', {
+      const res = await fetch('https://api.reloadinteractive.com/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
+        // Send only what the backend expects
         body: JSON.stringify({ action: 'login', email, password })
       });
 
@@ -29,8 +30,8 @@ const Login = () => {
 
       if (res.ok) {
         setMessage(`Login successful! Token: ${data.token}`);
-        // You can save the token to localStorage/sessionStorage here:
-        // localStorage.setItem('token', data.token);
+        // Save the JWT token for authenticated requests
+        localStorage.setItem('token', data.token);
       } else {
         setMessage(data.message || 'Login failed');
       }
