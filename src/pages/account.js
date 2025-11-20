@@ -11,12 +11,13 @@ const Account = () => {
 
   const token = localStorage.getItem("token");
 
-  // Safe: this comes AFTER all hooks
-  if (!token) return <Navigate to="/" replace />;
-
   useEffect(() => {
     document.title = "My Account - Reload Interactive";
   }, []);
+  // Safe: this comes AFTER all hooks
+  if (!token) return <Navigate to="/" replace />;
+
+  
 
   const handlePasswordChange = async (e) => {
     e.preventDefault();
@@ -92,7 +93,7 @@ const Account = () => {
           <button type="submit">Upload Photo</button>
         </form>
       </section>
-            
+
       {/* Change Password */}
       <section className="account-section">
         <h2>Change Password</h2>
