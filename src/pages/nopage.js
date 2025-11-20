@@ -2,11 +2,16 @@
 // All Rights Reserved.
 
 import React, { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 const NoPage = () => {
   useEffect(() => {
     document.title = "404 - Reload Interactive";
   }, []);
+
+  const timeout = setTimeout(() => {
+    Navigate("/");
+  })
 
   return (
     <div style={styles.container}>
@@ -26,6 +31,11 @@ const NoPage = () => {
       </button>
       */}
     </div>
+
+    
+
+
+
   );
 };
 
