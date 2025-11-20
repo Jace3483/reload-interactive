@@ -1,0 +1,84 @@
+.account-page {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #fff;
+}
+
+.account-page h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.account-section {
+  background: #1b1b1b;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.account-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: #00bfff;
+}
+
+.avatar-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.avatar-preview img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00bfff;
+}
+
+.account-section input[type="file"] {
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+.account-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account-section input[type="password"] {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #2b2b2b;
+  color: white;
+  font-size: 1rem;
+}
+
+.account-section button {
+  padding: 12px;
+  background: #00bfff;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.account-section button:hover {
+  opacity: 0.8;
+}
+
+.account-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ff8080;
+}

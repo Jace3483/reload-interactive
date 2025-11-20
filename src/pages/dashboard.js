@@ -5,7 +5,7 @@ import "./dashboard.css";
 const Dashboard = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleLogout = () => {
+  const handleMy Account = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
   };
@@ -64,7 +64,7 @@ const Dashboard = () => {
                   }}
                 >
                   <button
-                    onClick={handleLogout}
+                    onClick={() => (window.location.href = "/account")}
                     style={{
                       background: "none",
                       border: "none",
