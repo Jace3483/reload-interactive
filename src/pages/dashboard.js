@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import "./dashboard.css";
 
 const Dashboard = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
   // Check for stored token
   const token = localStorage.getItem("token");
 
@@ -32,7 +38,46 @@ const Dashboard = () => {
           <div className="top-icons">
             <button>🔔</button>
             <button>💬</button>
-            <img src="https://i.pravatar.cc/40" alt="User" className="avatar" />
+
+            {/* Profile Dropdown */}
+            <div className="profile-menu" style={{ position: "relative" }}>
+              <img
+                src="https://i.pravatar.cc/40"
+                alt="User"
+                className="avatar"
+                onClick={() => setMenuOpen(!menuOpen)}
+                style={{ cursor: "pointer" }}
+              />
+
+              {menuOpen && (
+                <div
+                  className="dropdown"
+                  style={{
+                    position: "absolute",
+                    right: 0,
+                    top: "50px",
+                    background: "#1b1b1b",
+                    padding: "10px 15px",
+                    borderRadius: "8px",
+                    boxShadow: "0 4px 10px rgba(0,0,0,0.4)",
+                    zIndex: 20
+                  }}
+                >
+                  <button
+                    onClick={handleLogout}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      color: "white",
+                      cursor: "pointer",
+                      fontSize: "0.95rem"
+                    }}
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </header>
 
