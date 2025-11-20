@@ -20,19 +20,34 @@ const Login = () => {
       const res = await fetch('https://api.reloadinteractive.com/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'login', email, password })
+        body: JSON.stringify({ email, password })
       });
 
-      const data = await res.json();
+      let data = {};
+      try {
+        data = await res.json();
+      } catch (jsonErr) {
+        console.error("Invalid JSON from API:", jsonErr);
+        setMessage("Unexpected server response.");
+        return;
+      }
 
       if (res.ok) {
-        setMessage(`Login successful! Token: ${data.token}`);
+        // Save token
         localStorage.setItem('token', data.token);
+
+        // User feedback
+        setMessage('Login successful! Redirecting...');
+
+        // Redirect to dashboard or home
+        setTimeout(() => {
+          window.location.href = '/dashboard';
+        }, 800);
       } else {
         setMessage(data.message || 'Login failed');
       }
     } catch (err) {
-      console.error(err);
+      console.error('Login error:', err);
       setMessage('An error occurred. Please try again.');
     }
   };
@@ -49,6 +64,7 @@ const Login = () => {
           alt="Reload Interactive Logo"
           style={styles.logo}
         />
+
         <h1 style={styles.title}>Sign In</h1>
         <p style={styles.subtitle}>Sign In to your Reload Interactive Account</p>
 
@@ -61,6 +77,7 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
+
           <input
             style={styles.input}
             type="password"
@@ -69,7 +86,10 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          <button style={styles.button} type="submit">Sign In</button>
+
+          <button style={styles.button} type="submit">
+            Sign In
+          </button>
         </form>
 
         <div style={styles.separator}>OR</div>
