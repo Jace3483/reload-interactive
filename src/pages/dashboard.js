@@ -2,9 +2,12 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import "./dashboard.css";
 
-const Dashboard = ({ isLoggedIn }) => {
+const Dashboard = () => {
+  // Check for stored token
+  const token = localStorage.getItem("token");
+
   // Redirect if NOT logged in
-  if (!isLoggedIn) {
+  if (!token) {
     return <Navigate to="/" replace />;
   }
 
