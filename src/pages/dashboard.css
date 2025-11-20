@@ -1,0 +1,211 @@
+/* GENERAL LAYOUT */
+.dashboard {
+  display: flex;
+  background: #0f1117;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 80px;
+  background: #151821;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.sidebar-logo {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.sidebar-nav .nav-btn {
+  background: none;
+  border: none;
+  color: #777;
+  font-size: 22px;
+  margin: 18px 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.sidebar-nav .nav-btn.active,
+.sidebar-nav .nav-btn:hover {
+  color: #00bfff;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.search {
+  width: 40%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background: #1f222b;
+  color: white;
+}
+
+.top-icons button {
+  margin-right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+/* HERO CARD */
+.hero-card {
+  position: relative;
+  background: #1a1c24;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.hero-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.hero-info {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.hero-info h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.tag {
+  background: #ff4b4b;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.purchase-btn {
+  background: #00bfff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* GAME ROW */
+.section-title {
+  margin-bottom: 12px;
+}
+
+.game-row {
+  display: flex;
+  gap: 20px;
+}
+
+.game-card {
+  background: #1a1c24;
+  padding: 12px;
+  border-radius: 10px;
+  width: 180px;
+  text-align: center;
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* BOTTOM ROW */
+.bottom-row {
+  display: flex;
+  margin-top: 25px;
+  gap: 20px;
+}
+
+.accessories-card,
+.library-card {
+  background: #1a1c24;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.accessories-card {
+  width: 30%;
+}
+
+.accessory-img {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.library-card {
+  flex: 1;
+}
+
+.library-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.download-btn,
+.install-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn {
+  background: #00bfff;
+}
+
+.install-btn {
+  background: #444;
+}
+
+/* RIGHT SIDEBAR */
+.rightbar {
+  width: 260px;
+  background: #151821;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.friend img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.friend-name {
+  font-weight: bold;
+}
