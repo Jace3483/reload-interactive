@@ -92,7 +92,7 @@ const Account = () => {
           <button type="submit">Upload Photo</button>
         </form>
       </section>
-
+            
       {/* Change Password */}
       <section className="account-section">
         <h2>Change Password</h2>
