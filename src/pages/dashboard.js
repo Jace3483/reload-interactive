@@ -3,10 +3,15 @@ import { Navigate } from "react-router-dom";
 import "./dashboard.css";
 
 const Dashboard = () => {
-  const token = localStorage.getItem("token");
-  if (!token) return <Navigate to="/" replace />;
-
+  // ⛔ FIX: Hooks must come before ANY conditional return
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const token = localStorage.getItem("token");
+
+  // Now the redirect is safe
+  if (!token) {
+    return <Navigate to="/" replace />;
+  }
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -31,6 +36,7 @@ const Dashboard = () => {
         {/* Top Bar */}
         <header className="topbar">
           <input type="text" className="search" placeholder="Search..." />
+
           <div className="top-icons">
             <button>🔔</button>
             <button>💬</button>
