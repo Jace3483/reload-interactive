@@ -7,6 +7,7 @@ import About from './pages/about';
 import NoPage from './pages/nopage';
 import Login from './pages/login';
 import Dashboard from './pages/dashboard';
+import Account from './pages/account';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/account" element={<Account />} />
 
         {/* Show NoPage for any invalid url */}
         <Route path="*" element={<NoPage />} />
