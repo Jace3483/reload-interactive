@@ -3,15 +3,19 @@ import { Navigate } from "react-router-dom";
 import "./dashboard.css";
 
 const Dashboard = () => {
-  const token = localStorage.getItem("token");
-  if (!token) return <Navigate to="/" replace />;
-
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
   };
+  // Check for stored token
+  const token = localStorage.getItem("token");
+
+  // Redirect if NOT logged in
+  if (!token) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <div className="dashboard">
@@ -56,25 +60,9 @@ const Dashboard = () => {
                     padding: "10px 15px",
                     borderRadius: "8px",
                     boxShadow: "0 4px 10px rgba(0,0,0,0.4)",
-                    zIndex: 20,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
+                    zIndex: 20
                   }}
                 >
-                  <button
-                    onClick={() => (window.location.href = "/account")}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      color: "white",
-                      cursor: "pointer",
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    My Account
-                  </button>
-
                   <button
                     onClick={handleLogout}
                     style={{
@@ -82,7 +70,7 @@ const Dashboard = () => {
                       border: "none",
                       color: "white",
                       cursor: "pointer",
-                      fontSize: "0.95rem",
+                      fontSize: "0.95rem"
                     }}
                   >
                     Logout
@@ -95,11 +83,7 @@ const Dashboard = () => {
 
         {/* Hero Game Banner */}
         <section className="hero-card">
-          <img
-            className="hero-img"
-            src="https://wallpaperaccess.com/full/5055637.jpg"
-            alt="Spider-Man"
-          />
+          <img className="hero-img" src="https://wallpaperaccess.com/full/5055637.jpg" alt="Spider-Man" />
           <div className="hero-info">
             <span className="tag">NEW</span>
             <h1>Marvel’s Spider-Man: Miles Morales</h1>
@@ -137,11 +121,7 @@ const Dashboard = () => {
           {/* Accessories */}
           <div className="accessories-card">
             <h2>Accessories</h2>
-            <img
-              src="https://i.imgur.com/5WsxnT8.png"
-              alt="Headset"
-              className="accessory-img"
-            />
+            <img src="https://i.imgur.com/5WsxnT8.png" alt="Headset" className="accessory-img" />
           </div>
 
           {/* Library */}
