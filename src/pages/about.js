@@ -1,3 +1,6 @@
+// Copyright © 2025 Reload Interactive.
+// All Rights Reserved.
+
 import React from 'react';
 
 const About = () => {
