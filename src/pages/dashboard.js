@@ -1,7 +1,13 @@
 import React from "react";
+import { Navigate } from "react-router-dom";
 import "./dashboard.css";
 
-const Dashboard = () => {
+const Dashboard = ({ isLoggedIn }) => {
+  // Redirect if NOT logged in
+  if (!isLoggedIn) {
+    return <Navigate to="/" replace />;
+  }
+
   return (
     <div className="dashboard">
       {/* Sidebar */}
@@ -23,21 +29,13 @@ const Dashboard = () => {
           <div className="top-icons">
             <button>🔔</button>
             <button>💬</button>
-            <img
-              src="https://i.pravatar.cc/40"
-              alt="User"
-              className="avatar"
-            />
+            <img src="https://i.pravatar.cc/40" alt="User" className="avatar" />
           </div>
         </header>
 
         {/* Hero Game Banner */}
         <section className="hero-card">
-          <img
-            className="hero-img"
-            src="https://wallpaperaccess.com/full/5055637.jpg"
-            alt="Spider-Man"
-          />
+          <img className="hero-img" src="https://wallpaperaccess.com/full/5055637.jpg" alt="Spider-Man" />
           <div className="hero-info">
             <span className="tag">NEW</span>
             <h1>Marvel’s Spider-Man: Miles Morales</h1>
@@ -75,11 +73,7 @@ const Dashboard = () => {
           {/* Accessories */}
           <div className="accessories-card">
             <h2>Accessories</h2>
-            <img
-              src="https://i.imgur.com/5WsxnT8.png"
-              alt="Headset"
-              className="accessory-img"
-            />
+            <img src="https://i.imgur.com/5WsxnT8.png" alt="Headset" className="accessory-img" />
           </div>
 
           {/* Library */}
