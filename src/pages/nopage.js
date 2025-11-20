@@ -1,12 +1,12 @@
 import React from 'react';
 
-const nopage = () => {
+const NoPage = () => {
   return (
-    <div style={{ textAlign: "center", marginTop: "20vh", color: "#fff" }}>
-      <h1>404 - Page Not Found</h1>
-      <p>The page you're looking for doesn't exist.</p>
+    <div>
+      <h1>No Page</h1>
+      <p>Welcome to the About page!!</p>
     </div>
   );
 };
 
-export default nopage;
+export default NoPage;
