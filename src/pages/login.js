@@ -17,7 +17,7 @@ const Login = () => {
     setMessage('');
 
     try {
-      const res = await fetch('https://api.reloadinteractive.com/login', {
+      const res = await fetch('https://api.reloadinteractive.com/dev/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'login', email, password })
