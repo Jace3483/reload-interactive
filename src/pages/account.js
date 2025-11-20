@@ -3,13 +3,16 @@ import { Navigate } from "react-router-dom";
 import "./account.css";
 
 const Account = () => {
-  const token = localStorage.getItem("token");
-  if (!token) return <Navigate to="/" replace />;
-
+  // ⛔ FIX: Hooks MUST come before any conditional returns
   const [message, setMessage] = useState("");
   const [passwordData, setPasswordData] = useState({ current: "", new: "" });
   const [avatar, setAvatar] = useState(null);
   const [preview, setPreview] = useState(null);
+
+  const token = localStorage.getItem("token");
+
+  // Safe: this comes AFTER all hooks
+  if (!token) return <Navigate to="/" replace />;
 
   useEffect(() => {
     document.title = "My Account - Reload Interactive";
@@ -68,6 +71,7 @@ const Account = () => {
       {/* Upload Profile Photo */}
       <section className="account-section">
         <h2>Profile Photo</h2>
+
         <div className="avatar-preview">
           <img
             src={preview || "https://i.pravatar.cc/120"}
@@ -92,12 +96,15 @@ const Account = () => {
       {/* Change Password */}
       <section className="account-section">
         <h2>Change Password</h2>
+
         <form onSubmit={handlePasswordChange}>
           <input
             type="password"
             placeholder="Current Password"
             value={passwordData.current}
-            onChange={(e) => setPasswordData({ ...passwordData, current: e.target.value })}
+            onChange={(e) =>
+              setPasswordData({ ...passwordData, current: e.target.value })
+            }
             required
           />
 
@@ -105,7 +112,9 @@ const Account = () => {
             type="password"
             placeholder="New Password"
             value={passwordData.new}
-            onChange={(e) => setPasswordData({ ...passwordData, new: e.target.value })}
+            onChange={(e) =>
+              setPasswordData({ ...passwordData, new: e.target.value })
+            }
             required
           />
 
