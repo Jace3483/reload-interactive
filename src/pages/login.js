@@ -35,6 +35,7 @@ const Login = () => {
       if (res.ok) {
         // Save token
         localStorage.setItem('token', data.token);
+        localStorage.setItem('ri_id', data.ri_id);
 
         // User feedback
         setMessage('Login successful! Redirecting...');

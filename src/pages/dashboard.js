@@ -18,9 +18,12 @@ const Dashboard = () => {
     window.location.href = "/";
   };
 
+  const ri_id = localStorage.getItem("ri_id");
+
   return (
     <div className="dashboard">
       {/* Sidebar */}
+      <p>{ri_id}</p>
       <aside className="sidebar">
         <div className="sidebar-logo">🎮</div>
         <nav className="sidebar-nav">
